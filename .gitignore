@@ -6,3 +6,7 @@ dist
 !.env.example
 *.local
 .DS_Store
+
+# Local tooling / install artifacts (do not commit)
+.audit-temp.json
+npm-install.log
