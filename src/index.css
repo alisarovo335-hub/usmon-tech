@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #22c55e;
+  --color-brand-muted: #16a34a;
+  --color-surface: #0a0a0a;
+  --color-surface-elevated: #141414;
+  --color-surface-card: #1a1a1a;
+  --color-border-subtle: #262626;
+  --color-text-primary: #fafafa;
+  --color-text-muted: #a3a3a3;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-brand) 35%, transparent);
+  color: var(--color-text-primary);
+}
+
+.section-container {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  @apply text-3xl font-semibold tracking-tight sm:text-4xl;
+}
+
+.section-subheading {
+  @apply mt-3 max-w-2xl text-base leading-relaxed text-neutral-400 sm:text-lg;
+}
+
+.premium-card {
+  @apply rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 backdrop-blur-sm transition-colors duration-300;
+}
+
+.premium-card:hover {
+  @apply border-neutral-700 bg-neutral-900/80;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-neutral-950 transition-all duration-200 hover:bg-brand-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-700 bg-transparent px-6 py-3 text-sm font-semibold text-neutral-100 transition-all duration-200 hover:border-neutral-500 hover:bg-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+}
+
+.brand-gradient-text {
+  background: linear-gradient(135deg, #fafafa 0%, #22c55e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-orb {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-orb {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <rect x="80" y="80" width="1040" height="470" rx="32" fill="#141414" stroke="#262626" stroke-width="2"/>
+  <text x="120" y="260" fill="#22c55e" font-family="system-ui,sans-serif" font-size="32" font-weight="600">USMON TECH</text>
+  <text x="120" y="330" fill="#fafafa" font-family="system-ui,sans-serif" font-size="52" font-weight="700">Building Digital Products</text>
+  <text x="120" y="400" fill="#a3a3a3" font-family="system-ui,sans-serif" font-size="28">Full-Stack Developer · Web · Mobile · Business Software</text>
+</svg>
