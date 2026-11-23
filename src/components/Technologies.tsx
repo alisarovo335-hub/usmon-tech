@@ -6,8 +6,7 @@ export function Technologies() {
       <div className="section-container">
         <h2 className="section-heading">Technologies</h2>
         <p className="section-subheading">
-          Tools and frameworks used in verified projects (ARZON BOZOR, NEWVID). Listed only where they appear in
-          those codebases.
+          Stacks verified in ARZON BOZOR and NEWVID — each item appears in those project codebases, not a generic list.
         </p>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {techCategories.map((category) => (

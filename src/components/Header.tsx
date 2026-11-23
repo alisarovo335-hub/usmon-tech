@@ -62,7 +62,7 @@ export function Header() {
             </a>
           ))}
           <a href="#contact" className="btn-primary py-2.5 text-sm">
-            Hire Me
+            Start a project
           </a>
         </nav>
 
@@ -95,7 +95,7 @@ export function Header() {
               </a>
             ))}
             <a href="#contact" className="btn-primary mt-2" onClick={() => setOpen(false)}>
-              Hire Me
+              Start a project
             </a>
           </nav>
         </div>

@@ -3,15 +3,14 @@ import { siteConfig } from "@/config/site";
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-24 border-t border-neutral-900 py-20 sm:py-24">
+    <section id="about" className="scroll-mt-24 border-t border-neutral-900 py-16 sm:py-20">
       <div className="section-container">
-        <h2 className="section-heading">About Me</h2>
-        <p className="section-subheading">
-          I&apos;m {siteConfig.developerName}, a software developer focused on turning business ideas into reliable
-          digital products. I combine problem-solving, clean code, and modern technologies with an emphasis on
-          outcomes that matter to your team and customers.
+        <h2 className="section-heading">About {siteConfig.brand}</h2>
+        <p className="section-subheading max-w-3xl">
+          I&apos;m {siteConfig.developerName} — remote full-stack development for international clients: clear scope,
+          milestone delivery, maintainable code.
         </p>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {aboutHighlights.map((item) => {
             const Icon = item.icon;
             return (

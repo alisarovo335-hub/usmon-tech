@@ -24,11 +24,11 @@ export default function App() {
         Skip to main content
       </a>
       <Header />
-      <main id="main">
+      <main id="main" className="min-w-0 overflow-x-clip">
         <Hero />
-        <About />
-        <Services />
         <Projects />
+        <Services />
+        <About />
         <Technologies />
         <WorkProcess />
         <Contact />

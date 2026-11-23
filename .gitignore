@@ -10,3 +10,4 @@ dist
 # Local tooling / install artifacts (do not commit)
 .audit-temp.json
 npm-install.log
+.vercel

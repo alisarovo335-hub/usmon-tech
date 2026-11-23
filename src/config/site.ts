@@ -6,15 +6,16 @@
  */
 export const siteConfig = {
   brand: "USMON TECH",
-  tagline: "Full-Stack Developer | Web & Mobile Application Developer | Business Software Solutions",
+  tagline:
+    "Custom websites, mobile apps, and business software — built for international teams.",
   developerName: "Usmon",
   email: "sultonsuliman2726@gmail.com",
   whatsapp: "",
   telegram: "",
   linkedIn: "",
   locale: "en",
-  /** Planned production origin (no trailing slash). Change to your real URL before go-live. */
-  siteUrl: "https://usmon.tech",
+  /** Live deployment origin (no trailing slash). Update when a custom domain is verified. */
+  siteUrl: "https://usmon-tech.vercel.app",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

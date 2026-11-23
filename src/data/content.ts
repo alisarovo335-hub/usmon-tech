@@ -18,17 +18,35 @@ export type ProjectStatus = "Completed" | "In Development" | "Prototype";
 export interface Project {
   id: string;
   name: string;
+  category: string;
   description: string;
+  /** What you built in this product (verifiable scope, not client results). */
+  role: string;
   status: ProjectStatus;
   href?: string;
+  /** Accessible label for the external demo button. */
+  externalDemoLabel?: string;
+  /** Shown under demo buttons — limits of what the URL provides. */
+  demoAccessNote?: string;
   image: string;
   imageAlt: string;
+  /** Optional crop for phone frame; defaults to main image when omitted. */
+  mobileImage?: string;
+  mobileImageAlt?: string;
+  /** Label in browser chrome (public hostname path only). */
+  demoUrlLabel?: string;
+  /** Show phone mockup with responsive preview of the same UI asset. */
+  showMobilePreview: boolean;
   highlights: string[];
+  /** What a visitor can verify today (demo, screenshots, or codebase scope). */
+  implementedFeatures: string[];
+  demoNote?: string;
 }
 
 export interface Service {
   title: string;
   description: string;
+  outcome: string;
   icon: LucideIcon;
 }
 
@@ -53,48 +71,56 @@ export const services: Service[] = [
     title: "E-commerce Website Development",
     description:
       "Custom online stores with product catalogs, secure checkout flows, and admin tools tailored to your market and brand.",
+    outcome: "Helps you sell online with a storefront customers trust.",
     icon: ShoppingCart,
   },
   {
     title: "Business Website Development",
     description:
       "Fast, professional company websites built for credibility, SEO, and lead generation across international audiences.",
+    outcome: "Turns visitors into qualified leads with a clear message and structure.",
     icon: Globe,
   },
   {
     title: "Mobile Application Development",
     description:
       "Cross-platform mobile apps with intuitive UX, stable performance, and integration with your existing systems.",
+    outcome: "Puts your service or product in your customers’ pockets on iOS and Android.",
     icon: Smartphone,
   },
   {
     title: "Admin Dashboard Development",
     description:
       "Role-based dashboards to manage users, content, orders, and analytics with clear, actionable interfaces.",
+    outcome: "Gives your team control without wrestling with spreadsheets.",
     icon: LayoutDashboard,
   },
   {
     title: "Business Management Systems",
     description:
       "Tailored internal tools for workflows, reporting, and operations — designed around how your team actually works.",
+    outcome: "Replaces manual processes with software your staff will actually use.",
     icon: LineChart,
   },
   {
     title: "AI-Powered Applications",
     description:
       "Practical AI features such as smart search, automation, and assistants that solve real business problems.",
+    outcome: "Automates repetitive work when a standard CRUD app is not enough.",
     icon: Brain,
   },
   {
     title: "Website Redesign and Optimization",
     description:
       "Modern redesigns with improved speed, accessibility, and conversion-focused layouts without losing your brand.",
+    outcome: "Refreshes outdated sites so they load fast and convert better.",
     icon: Sparkles,
   },
   {
     title: "API and Backend Development",
     description:
       "Secure, well-documented APIs and backend services that scale with your product and integrate cleanly.",
+    outcome: "Connects your web, mobile, and third-party tools with reliable data.",
     icon: Server,
   },
 ];
@@ -103,30 +129,48 @@ export const projects: Project[] = [
   {
     id: "arzon-bozor",
     name: "ARZON BOZOR",
+    category: "E-commerce · Live storefront demo",
     description:
-      "An online marketplace project designed for the Tajikistan market — connecting buyers and sellers with a modern shopping experience.",
+      "Online marketplace for Tajikistan: catalog browsing, promos, and multi-language storefront UI on a static Surge demo. The wider product also includes a NestJS API and Expo app in code — not all of that runs on the public demo host.",
+    role: "Sole developer — storefront UI, catalog UX, integration planning, and full-stack architecture for the marketplace codebase.",
     status: "Completed",
-    href: "https://arzon-bozor.surge.sh/",
+    href: "https://arzon-bozor.surge.sh/products.html",
+    externalDemoLabel: "Browse catalog demo",
+    demoAccessNote:
+      "Opens the public product catalog (no buyer account required on this static demo). Seller onboarding uses a separate sign-in page; checkout and live payment are not production-complete on Surge.",
     image: "/projects/arzon-bozor-cover.jpg",
-    imageAlt: "ARZON BOZOR marketplace homepage preview",
+    imageAlt: "Screenshot of the ARZON BOZOR marketplace storefront homepage",
+    demoUrlLabel: "arzon-bozor.surge.sh/products",
+    showMobilePreview: true,
     highlights: [
-      "Next.js web storefront",
-      "NestJS API with PostgreSQL",
-      "Expo React Native companion app",
+      "Static HTML/CSS storefront (Surge demo)",
+      "NestJS + PostgreSQL (marketplace codebase)",
+      "Expo React Native companion app (codebase)",
     ],
+    implementedFeatures: [
+      "Homepage, category navigation, and product listing pages on the static demo",
+      "Responsive storefront layout (Tajik / Russian / English UI toggles on the live site)",
+      "Separate seller sign-in flow — not required to browse the catalog demo",
+    ],
+    demoNote:
+      "Portfolio screenshot above is from the storefront UI. The demo runs as static HTML on Surge; the Next.js/NestJS/Expo stack in the repo is not fully wired on that host.",
   },
   {
     id: "newvid",
     name: "NEWVID",
+    category: "Video platform · In development",
     description:
-      "A video-sharing platform project inspired by modern video platforms, built as a modular product with separate web and microservices.",
+      "Video-sharing product in progress: Next.js web client, NestJS microservices, and PostgreSQL with Prisma. Work focuses on modular services and upload/browse flows — still being built.",
+    role: "Sole developer — architecture, web client, and backend service design.",
     status: "In Development",
     image: "/projects/newvid-cover.png",
-    imageAlt: "NEWVID brand and product preview",
-    highlights: [
-      "Next.js web application",
-      "NestJS microservices",
-      "PostgreSQL with Prisma",
+    imageAlt: "In-progress NEWVID product branding and interface preview",
+    showMobilePreview: false,
+    highlights: ["Next.js web application", "NestJS microservices", "PostgreSQL with Prisma"],
+    implementedFeatures: [
+      "Service boundaries and data model taking shape in the repository",
+      "In-progress UI and branding (preview image on this page)",
+      "No public demo URL — status remains In Development",
     ],
   },
 ];
@@ -261,4 +305,11 @@ export const aboutHighlights = [
     description: "Professional interfaces that feel premium on desktop and mobile.",
     icon: Palette,
   },
+];
+
+/** Shown in the hero for quick scanning — factual service lines, not metrics. */
+export const heroDeliverables = [
+  "Business & e-commerce websites",
+  "Cross-platform mobile applications",
+  "APIs, dashboards, and internal tools",
 ];

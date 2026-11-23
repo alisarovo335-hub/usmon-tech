@@ -34,7 +34,7 @@ export function DocumentHead() {
     const ogImage = getOgImageUrl();
     const siteUrl = getProductionSiteUrl();
 
-    document.title = "USMON TECH | Full-Stack Developer";
+    document.title = "USMON TECH | International Software Development";
     ensureLinkRel("canonical", canonical);
     ensureMeta('meta[property="og:url"]', { property: "og:url", content: canonical });
     ensureMeta('meta[property="og:image"]', { property: "og:image", content: ogImage });

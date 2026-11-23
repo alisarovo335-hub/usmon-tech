@@ -153,8 +153,8 @@ export function ContactForm() {
 
       <p id="contact-form-notice" className="text-xs leading-relaxed text-neutral-500">
         {formspreeReady
-          ? "Submit this form to send your inquiry securely via Formspree."
-          : "Form delivery is not configured yet. Set VITE_FORMSPREE_ENDPOINT in a local .env file (see .env.example), or email me directly."}
+          ? "Submit this form to send your inquiry securely. You will receive a confirmation in the browser after a successful send."
+          : "Form delivery is not configured on this deployment. Please use the email link instead."}
         {hasContactChannel("email") ? (
           <>
             {" "}

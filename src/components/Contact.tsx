@@ -12,9 +12,9 @@ export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24 border-t border-neutral-900 bg-neutral-950/50 py-20 sm:py-24">
       <div className="section-container">
-        <h2 className="section-heading">Contact / Hire Me</h2>
+        <h2 className="section-heading">Start your project</h2>
         <p className="section-subheading">
-          Ready to discuss your website, app, or software project? Send a message through the form or email me directly
+          Tell me about your website, app, or software idea. Use the form for a structured brief or email me directly
           {hasContactChannel("email") ? (
             <>
               {" "}
@@ -76,13 +76,7 @@ export function Contact() {
                     </li>
                   ) : null}
                 </ul>
-              ) : (
-                <p className="text-sm leading-relaxed text-neutral-400">
-                  I am setting up direct contact options for international clients (email, WhatsApp, Telegram, and
-                  LinkedIn). They will appear here as soon as they are live. In the meantime, you can prepare your
-                  project brief using the form — secure delivery will be enabled before I accept live inquiries.
-                </p>
-              )}
+              ) : null}
               {hasContactChannel("email") && !hasContactChannel("whatsapp") && !hasContactChannel("telegram") ? (
                 <a
                   href={`mailto:${siteConfig.email}`}
