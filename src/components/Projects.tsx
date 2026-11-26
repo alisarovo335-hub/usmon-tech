@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { projects, type Project, type ProjectStatus } from "@/data/content";
 import { ProjectDeviceMockup } from "./ProjectDeviceMockup";
+import { PortfolioGallery } from "./gallery/PortfolioGallery";
+import { caseStudyAnchorId } from "@/data/gallery";
 
 function statusStyles(status: ProjectStatus): string {
   switch (status) {
@@ -37,11 +39,13 @@ export function Projects() {
 
         <ul className="mt-16 space-y-24 sm:mt-20 sm:space-y-32 lg:space-y-40">
           {projects.map((project, index) => (
-            <li key={project.id}>
+            <li key={project.id} id={caseStudyAnchorId(project.id as "arzon-bozor" | "newvid")}>
               <ProjectShowcase project={project} visualOnRight={index % 2 === 1} />
             </li>
           ))}
         </ul>
+
+        <PortfolioGallery />
       </div>
     </section>
   );
